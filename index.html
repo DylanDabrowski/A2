@@ -42,7 +42,20 @@
         spaceship.style.top = Math.random() * 150 + currY + 'px';
       }
 
+      var alien = document.getElementById("alien");
+      winHeight = window.innerHeight;
+      winWidth = window.innerWidth;
+
+      alien.addEventListener("mouseover", function(event){
+
+        var currXAlien = parseInt(alien.style.left);
+        var currYAlien = parseInt(alien.style.top);
+        event.target.style.left = Math.random() * winHeight/4 * 1 + 20 * 'px';
+        event.target.style.top = Math.random() * winWidth/4 * 1 + 20 * 'px';
+
       });
+
+      })
 
 
       //2. Create an event handler on the window object for the mousemove event  
