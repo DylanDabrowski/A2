@@ -17,6 +17,33 @@
       //Event handler setup
       //1. Create an event handler on the window object for the load event 
       
+      window.addEventListener('DOMContentLoaded', (event) => {
+        console.log("Load event test")
+
+        window.addEventListener('mousemove', function(e){
+
+          mouseEvent(e);
+        
+      });
+
+      function mouseEvent(event){
+        var x = event.offsetX;
+        var y = event.offsetY;
+
+        var spaceship = document.getElementById('spaceship1');
+
+        spaceship.style.left = x + 'px';
+        spaceship.style.top = y + 'px';
+
+        var currX = parseInt(spaceship.style.left) + x;
+        var currY = parseInt(spaceship.style.top) + y;
+
+        spaceship.style.left = Math.random() * 150 + currX + 'px';
+        spaceship.style.top = Math.random() * 150 + currY + 'px';
+      }
+
+      });
+
 
       //2. Create an event handler on the window object for the mousemove event  
 
