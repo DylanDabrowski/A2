@@ -2,9 +2,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!--
+      Dylan Dabrowski - 991515673
+    -->
     <meta charset="utf-8">
     <title>Catch the alien</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Catch The Alien</h1>
@@ -47,11 +50,11 @@
       winWidth = window.innerWidth;
 
       alien.addEventListener("mouseover", function(event){
+        var x = event.offsetX;
+        var y = event.offsetY;
 
-        var currXAlien = parseInt(alien.style.left);
-        var currYAlien = parseInt(alien.style.top);
-        event.target.style.left = Math.random() * winHeight/4 * 1 + 20 * 'px';
-        event.target.style.top = Math.random() * winWidth/4 * 1 + 20 * 'px';
+        alien.style.left = Math.random() * winHeight/2 + x + 'px';
+        alien.style.top = Math.random() * winWidth/2 + y + 'px';
 
       });
 
